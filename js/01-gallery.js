@@ -31,12 +31,15 @@ itemsContainer.addEventListener("click", onItemsContainerClick);
 
 function onItemsContainerClick(evt) {
   evt.preventDefault();
+
   if (evt.target.nodeName !== "IMG") {
     return;
   }
+
   const selectedImg = evt.target.dataset.source;
+
   const instance = basicLightbox.create(`
-    <img src="${selectedImg}">
+    <img src="${selectedImg}" alt ="images">
 `);
 
   instance.show();
